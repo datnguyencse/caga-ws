@@ -3,6 +3,6 @@
 ## Run the Server
 `go run main.go`
 ## Run the client
-`go run client.go`
+`go run client/main.go`
 ## Run the test
-`go test ./random/rand_test.go`
+`go test ./...`
