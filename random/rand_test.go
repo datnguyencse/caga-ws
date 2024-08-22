@@ -2,6 +2,7 @@ package random_test
 
 import (
 	"caga/websocket/random"
+	"fmt"
 	"math/big"
 	"testing"
 )
@@ -22,6 +23,12 @@ func TestUniqueRandom(t *testing.T) {
 
 		if num.Cmp(maxNumber) >= 0 {
 			t.Fatal("generated number should smaller than max")
+		}
+	}
+
+	for i := 0; i < 1000; i++ {
+		if !generated[fmt.Sprintf("%d", i)] {
+			t.Fatal("all generated number should be saved in the map")
 		}
 	}
 
